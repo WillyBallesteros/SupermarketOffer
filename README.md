@@ -17,9 +17,16 @@ El propósito de esta aplicación es desarrollar un sistema para consultar la of
 ## Instalación
 
 1. Clona este repositorio en tu máquina local:
-
    ```bash
    git clone https://github.com/WillyBallesteros/SupermarketOffer.git
+
+2. Instala las dependencias:
+   ```bash
+   npm install
+
+3. Ejecuta la aplicación:
+   ```bash
+   npm run test
 
 ### Diagrama de Clases
 ![image](https://github.com/user-attachments/assets/c8ba23bb-400b-4f6e-a925-9875fca90ab5)
