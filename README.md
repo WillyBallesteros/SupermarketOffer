@@ -72,6 +72,11 @@ El propósito de esta aplicación es desarrollar un sistema para consultar la of
    ```bash
    git clone https://github.com/WillyBallesteros/SupermarketOffer.git
    
+### Configuración base_url
+![image](https://github.com/user-attachments/assets/8d7333ab-45cd-4a10-9018-c5322461c969)
+
+### Prueba en postman
+![image](https://github.com/user-attachments/assets/123fd3f9-b74b-4add-9ebf-924826fd68ad)
 
 
 
