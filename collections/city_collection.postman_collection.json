@@ -1,0 +1,132 @@
+{
+  "info": {
+    "name": "City Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Crear Ciudad Válida",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Quito\",\n    \"country\": \"Ecuador\",\n    \"numHabitants\": 2000000\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/cities",
+          "host": ["{{base_url}}"],
+          "path": ["cities"]
+        }
+      }
+    },
+    {
+      "name": "Crear Ciudad Inválida",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Invalid City\",\n    \"country\": \"Brazil\",\n    \"numHabitants\": 2000000\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/cities",
+          "host": ["{{base_url}}"],
+          "path": ["cities"]
+        }
+      }
+    },
+    {
+      "name": "Obtener Todas las Ciudades",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/cities",
+          "host": ["{{base_url}}"],
+          "path": ["cities"]
+        }
+      }
+    },
+    {
+      "name": "Obtener Ciudad por ID Válido",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/cities/:cityId",
+          "host": ["{{base_url}}"],
+          "path": ["cities", ":cityId"]
+        }
+      }
+    },
+    {
+      "name": "Obtener Ciudad por ID Inválido",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/cities/0",
+          "host": ["{{base_url}}"],
+          "path": ["cities", "0"]
+        }
+      }
+    },
+    {
+      "name": "Actualizar Ciudad Válida",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Buenos Aires\",\n    \"country\": \"Argentina\",\n    \"numHabitants\": 3000000\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/cities/:cityId",
+          "host": ["{{base_url}}"],
+          "path": ["cities", ":cityId"]
+        }
+      }
+    },
+    {
+      "name": "Actualizar Ciudad con ID Inválido",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Buenos Aires\",\n    \"country\": \"Argentina\",\n    \"numHabitants\": 3000000\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/cities/0",
+          "host": ["{{base_url}}"],
+          "path": ["cities", "0"]
+        }
+      }
+    },
+    {
+      "name": "Eliminar Ciudad por ID Válido",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/cities/:cityId",
+          "host": ["{{base_url}}"],
+          "path": ["cities", ":cityId"]
+        }
+      }
+    },
+    {
+      "name": "Eliminar Ciudad por ID Inválido",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/cities/0",
+          "host": ["{{base_url}}"],
+          "path": ["cities", "0"]
+        }
+      }
+    }
+  ]
+}

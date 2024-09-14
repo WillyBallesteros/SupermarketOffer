@@ -1,0 +1,132 @@
+{
+  "info": {
+    "name": "Supermarket Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Crear Supermercado Válido",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Supermaxi Quito\",\n    \"longitude\": -78.467838,\n    \"latitude\": -0.180653,\n    \"webpage\": \"http://supermaxi.com\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/supermarkets",
+          "host": ["{{base_url}}"],
+          "path": ["supermarkets"]
+        }
+      }
+    },
+    {
+      "name": "Crear Supermercado Inválido",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"MiniMarket\",\n    \"longitude\": -78.467838,\n    \"latitude\": -0.180653,\n    \"webpage\": \"http://minimarket.com\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/supermarkets",
+          "host": ["{{base_url}}"],
+          "path": ["supermarkets"]
+        }
+      }
+    },
+    {
+      "name": "Obtener Todos los Supermercados",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/supermarkets",
+          "host": ["{{base_url}}"],
+          "path": ["supermarkets"]
+        }
+      }
+    },
+    {
+      "name": "Obtener Supermercado por ID Válido",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/supermarkets/:supermarketId",
+          "host": ["{{base_url}}"],
+          "path": ["supermarkets", ":supermarketId"]
+        }
+      }
+    },
+    {
+      "name": "Obtener Supermercado por ID Inválido",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/supermarkets/0",
+          "host": ["{{base_url}}"],
+          "path": ["supermarkets", "0"]
+        }
+      }
+    },
+    {
+      "name": "Actualizar Supermercado Válido",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Supermaxi Guayaquil\",\n    \"longitude\": -79.889066,\n    \"latitude\": -2.183271,\n    \"webpage\": \"http://supermaxi.com\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/supermarkets/:supermarketId",
+          "host": ["{{base_url}}"],
+          "path": ["supermarkets", ":supermarketId"]
+        }
+      }
+    },
+    {
+      "name": "Actualizar Supermercado con ID Inválido",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Supermaxi Guayaquil\",\n    \"longitude\": -79.889066,\n    \"latitude\": -2.183271,\n    \"webpage\": \"http://supermaxi.com\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/supermarkets/0",
+          "host": ["{{base_url}}"],
+          "path": ["supermarkets", "0"]
+        }
+      }
+    },
+    {
+      "name": "Eliminar Supermercado por ID Válido",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/supermarkets/:supermarketId",
+          "host": ["{{base_url}}"],
+          "path": ["supermarkets", ":supermarketId"]
+        }
+      }
+    },
+    {
+      "name": "Eliminar Supermercado por ID Inválido",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/supermarkets/0",
+          "host": ["{{base_url}}"],
+          "path": ["supermarkets", "0"]
+        }
+      }
+    }
+  ]
+}

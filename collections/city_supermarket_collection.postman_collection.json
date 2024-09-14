@@ -1,0 +1,124 @@
+{
+  "info": {
+    "name": "City-Supermarket Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Asociar Supermercado a Ciudad",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/cities/:cityId/supermarkets/:supermarketId",
+          "host": ["{{base_url}}"],
+          "path": ["cities", ":cityId", "supermarkets", ":supermarketId"]
+        }
+      }
+    },
+    {
+      "name": "Asociar Supermercado Inexistente a Ciudad",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/cities/:cityId/supermarkets/0",
+          "host": ["{{base_url}}"],
+          "path": ["cities", ":cityId", "supermarkets", "0"]
+        }
+      }
+    },
+    {
+      "name": "Obtener Supermercados de Ciudad",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/cities/:cityId/supermarkets",
+          "host": ["{{base_url}}"],
+          "path": ["cities", ":cityId", "supermarkets"]
+        }
+      }
+    },
+    {
+      "name": "Obtener Supermercado de Ciudad",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/cities/:cityId/supermarkets/:supermarketId",
+          "host": ["{{base_url}}"],
+          "path": ["cities", ":cityId", "supermarkets", ":supermarketId"]
+        }
+      }
+    },
+    {
+      "name": "Obtener Supermercado Inexistente de Ciudad",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/cities/:cityId/supermarkets/0",
+          "host": ["{{base_url}}"],
+          "path": ["cities", ":cityId", "supermarkets", "0"]
+        }
+      }
+    },
+    {
+      "name": "Actualizar Supermercados de Ciudad",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "[\n    {\n        \"name\": \"Supermaxi Loja\",\n        \"longitude\": -79.205,\n        \"latitude\": -4.007,\n        \"webpage\": \"http://supermaxiloja.com\"\n    }\n]"
+        },
+        "url": {
+          "raw": "{{base_url}}/cities/:cityId/supermarkets",
+          "host": ["{{base_url}}"],
+          "path": ["cities", ":cityId", "supermarkets"]
+        }
+      }
+    },
+    {
+      "name": "Actualizar Supermercados de Ciudad con ID Inválido",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "[\n    {\n        \"name\": \"Supermaxi Loja\",\n        \"longitude\": -79.205,\n        \"latitude\": -4.007,\n        \"webpage\": \"http://supermaxiloja.com\"\n    }\n]"
+        },
+        "url": {
+          "raw": "{{base_url}}/cities/0/supermarkets",
+          "host": ["{{base_url}}"],
+          "path": ["cities", "0", "supermarkets"]
+        }
+      }
+    },
+    {
+      "name": "Eliminar Supermercado Asociado a Ciudad",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/cities/:cityId/supermarkets/:supermarketId",
+          "host": ["{{base_url}}"],
+          "path": ["cities", ":cityId", "supermarkets", ":supermarketId"]
+        }
+      }
+    },
+    {
+      "name": "Eliminar Supermercado No Asociado a Ciudad",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/cities/:cityId/supermarkets/0",
+          "host": ["{{base_url}}"],
+          "path": ["cities", ":cityId", "supermarkets", "0"]
+        }
+      }
+    }
+  ]
+}
