@@ -12,7 +12,7 @@ El propósito de esta aplicación es desarrollar un sistema para consultar la of
 
 - [Node.js](https://nodejs.org/) v14 o superior
 - [Nest.js](https://nestjs.com/) v7 o superior
-- Base de datos (SQLite, MySQL, PostgreSQL, etc.) según la configuración.
+- Base de datos (SQLite).
 
 ## Instalación
 
