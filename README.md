@@ -1,86 +1,76 @@
-# SupermarketOffer
-Esta aplicación tiene el propósito de crear un sistema de consulta de la oferta de supermercados en las ciudades
+# Supermercados en Ciudades - API
 
-Instrucciones
-Cree un nuevo proyecto de Nest.js
-Abra el proyecto en el editor de su preferencia
-Suba el proyecto a un repositorio de GitHub en su cuenta personal
-Haga commit y push en su repositorio bifurcado periódicamente
-Punto 1. Persistencia (6%)
-Esta aplicación tiene el propósito de crear un sistema de consulta de la oferta de supermercados en las ciudades.
-Cree la entidad Ciudad en el módulo correspondiente. Una ciudad tiene un nombre, un país y un número de habitantes.
-Cree la entidad Supermercado en el módulo correspondiente. Un supermercado tiene un nombre, una longitud, una latitud y una página web.
-Incluya la asociación entre Ciudad y Supermercado; tenga en cuenta que una ciudad tiene varios supermercados y un supermercado tiene sedes en varias ciudades.
-Punto 2. Lógica (43%)
-Defina la lógica de Ciudad, esta debe incluir los métodos findAll, findOne, create, update y delete. Dentro de los métodos create y update, valide que el país al que pertenece la ciudad esté en la siguiente lista: 
-Argentina, Ecuador, Paraguay.
-Defina la lógica de Supermercado, esta debe incluir los métodos findAll, findOne, create, update y delete. Dentro de los métodos create y update, valide que el nombre del supermercado tenga más de 10 caracteres. 
-Defina la lógica de la asociación, esta debe incluir 5 métodos con las siguientes acciones:
-addSupermarketToCity: Asociar un supermercado a una ciudad.
-findSupermarketsFromCity: Obtener los supermercados que tiene una ciudad.
-findSupermarketFromCity: Obtener un supermercado de una ciudad.
-updateSupermarketsFromCity: Actualizar los supermercados que tiene una ciudad.
-deleteSupermarketFromCity: Eliminar el supermercado que tiene una ciudad.
-Implemente las pruebas para la lógica de Ciudad, para la lógica de Supermercado y para la lógica de la asociación.
-Punto 3. API (24%)
-Cree la clase del controlador para Ciudad, agregue la ruta /cities y defina los endpoints findAll, findOne, create, update y delete con sus respectivas anotaciones.
-Cree la clase del controlador para Supermercado, agregue la ruta /supermarkets y defina los endpoints findAll, findOne, create, update y delete con sus respectivas anotaciones.
-Cree la clase del controlador para la asociación Ciudad-Supermercado, agregue la ruta de modo que se acceda a los endpoints a través de la ciudad (ej. /cities/1/supermarkets/4 para findSupermarketFromCity) e  implemente los endpoints:
-addSupermarketToCity
-findSupermarketsFromCity
-findSupermarketFromCity
-updateSupermarketsFromCity
-deleteSupermarketFromCity
+## Descripción
 
+Este proyecto tiene como objetivo crear un sistema de consulta de la oferta de supermercados en distintas ciudades. La aplicación permite gestionar ciudades, supermercados y las relaciones entre ellos. Se utiliza **Nest.js** como framework para construir una API RESTful que permite realizar operaciones CRUD para estas entidades y gestionar sus asociaciones.
 
-Punto 4. Pruebas de Postman (27%)
-Defina 3 colecciones donde implemente las siguientes pruebas de postman para las entidades y para la asociación.
-Método
-Ciudad
-Supermercado
-Asociación
-POST
-Crear una ciudad válida.
-Crear un supermercado válido.
-Asociar un nuevo supermercado a una ciudad.
-POST
-Crear una ciudad inválida.
-Crear un supermercado inválido.
-Asociar un supermercado que no existe a una ciudad.
-GET
-Obtener todas las ciudades.
-Obtener todos los supermercados.
-Obtener todos los supermercados que pertenecen a una ciudad.
-GET
-Obtener una ciudad por ID.
-Obtener un supermercado por ID
-Obtener un supermercado asociado a una ciudad.
-GET
-Obtener una ciudad por un ID que no existe.
-Obtener un supermercado por un ID que no existe.
-Obtener un supermercado que no está asociado a una ciudad.
-PUT
-Actualizar una ciudad.
-Actualizar un supermercado.
-Actualizar los supermercados que están asociados a una ciudad.
-PUT
-Actualizar una ciudad con un ID que no existe.
-Actualizar un supermercado con un ID que no existe.
-Actualizar los supermercados asociados a una ciudad, con un supermercado inexistente.
-DELETE
-Eliminar una ciudad por su ID.
-Eliminar un supermercado por su ID.
-Eliminar un supermercado asociado a una ciudad.
-DELETE
-Eliminar una ciudad con un ID que no existe.
-Eliminar un supermercado con un ID que no existe.
-Eliminar un supermercado que no estaba previamente asociado a una ciudad.
+## Enunciado del Proyecto
+
+El propósito de esta aplicación es desarrollar un sistema para consultar la oferta de supermercados en distintas ciudades. A continuación se detallan los puntos claves del proyecto:
+
+### Punto 1. Persistencia (6%)
+
+1. Crear la entidad **Ciudad** en el módulo correspondiente. Una ciudad tiene los siguientes atributos:
+   - `nombre`: Nombre de la ciudad.
+   - `país`: País al que pertenece la ciudad.
+   - `número de habitantes`: Población de la ciudad.
+
+2. Crear la entidad **Supermercado** en el módulo correspondiente. Un supermercado tiene los siguientes atributos:
+   - `nombre`: Nombre del supermercado.
+   - `longitud`: Coordenada de longitud.
+   - `latitud`: Coordenada de latitud.
+   - `página web`: URL del sitio web del supermercado.
+
+3. Definir la relación muchos a muchos entre **Ciudad** y **Supermercado**:
+   - Una ciudad puede tener varios supermercados.
+   - Un supermercado puede tener varias sedes en distintas ciudades.
+
+### Punto 2. Lógica (43%)
+
+1. Implementar la lógica CRUD para las entidades **Ciudad** y **Supermercado**:
+   - `findAll`: Obtener todos los registros.
+   - `findOne`: Obtener un registro por su ID.
+   - `create`: Crear un nuevo registro (con validaciones).
+   - `update`: Actualizar un registro (con validaciones).
+   - `delete`: Eliminar un registro.
+
+2. Implementar validaciones:
+   - **Ciudad**: El país debe estar entre los siguientes valores: `Argentina`, `Ecuador`, `Paraguay`.
+   - **Supermercado**: El nombre debe tener al menos 10 caracteres.
+
+3. Implementar los métodos para la gestión de la relación entre **Ciudad** y **Supermercado**:
+   - `addSupermarketToCity`: Asociar un supermercado a una ciudad.
+   - `findSupermarketsFromCity`: Obtener los supermercados de una ciudad.
+   - `findSupermarketFromCity`: Obtener un supermercado específico de una ciudad.
+   - `updateSupermarketsFromCity`: Actualizar los supermercados de una ciudad.
+   - `deleteSupermarketFromCity`: Eliminar un supermercado de una ciudad.
+
+### Punto 3. API (24%)
+
+1. Crear los controladores para **Ciudad** y **Supermercado** con los endpoints REST correspondientes:
+   - `/cities`: Gestionar las ciudades.
+   - `/supermarkets`: Gestionar los supermercados.
+
+2. Crear el controlador para gestionar la relación **Ciudad-Supermercado**, con rutas como `/cities/:cityId/supermarkets/:supermarketId`.
+
+### Punto 4. Pruebas de Postman (27%)
+
+1. Definir colecciones en Postman para realizar pruebas:
+   - Pruebas de creación, obtención, actualización y eliminación para las entidades **Ciudad** y **Supermercado**.
+   - Pruebas para la relación entre ambas entidades (asociar, obtener, actualizar y eliminar supermercados de una ciudad).
+
+## Requisitos
+
+- [Node.js](https://nodejs.org/) v14 o superior
+- [Nest.js](https://nestjs.com/) v7 o superior
+- Base de datos (SQLite, MySQL, PostgreSQL, etc.) según la configuración.
+
+## Instalación
+
+1. Clona este repositorio en tu máquina local:
+
+   ```bash
+   git clone https://github.com/tu-usuario/nombre-del-repositorio.git
 
 
 
-Entregable
-Dentro del proyecto de Nest.js cree una carpeta denominada collections y exporte ahí las colecciones.
-Suba todos los cambios a su repositorio. 
-Haga un release con el tag v1.0.0 y el nombre parcial-practico. 
-Suba el archivo .zip del release como respuesta a la actividad de Coursera.
-Después de finalizado el plazo de entrega no realice ninguna modificación al repositorio bifurcado. Cualquier cambio, por pequeño que sea, anula automáticamente el parcial. 
