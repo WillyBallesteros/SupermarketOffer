@@ -27,5 +27,9 @@ El propósito de esta aplicación es desarrollar un sistema para consultar la of
 ### Prueba en postman
 ![image](https://github.com/user-attachments/assets/123fd3f9-b74b-4add-9ebf-924826fd68ad)
 
+### Aplicación corriendo
+![image](https://github.com/user-attachments/assets/26152076-87a4-4380-8720-356ed3139569)
 
+### Ejecución de Pruebas
+![image](https://github.com/user-attachments/assets/536c3c03-e92d-49b5-aa3e-d4799ee21f5d)
 
