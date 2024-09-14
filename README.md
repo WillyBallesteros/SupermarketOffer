@@ -20,7 +20,10 @@ El propósito de esta aplicación es desarrollar un sistema para consultar la of
 
    ```bash
    git clone https://github.com/WillyBallesteros/SupermarketOffer.git
-   
+
+### Diagrama de Clases
+![image](https://github.com/user-attachments/assets/c8ba23bb-400b-4f6e-a925-9875fca90ab5)
+
 ### Configuración base_url
 ![image](https://github.com/user-attachments/assets/8d7333ab-45cd-4a10-9018-c5322461c969)
 
