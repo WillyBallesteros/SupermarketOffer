@@ -25,13 +25,13 @@ describe('CityService', () => {
   });
 
   const seedDatabase = async () => {
-    repository.clear();
+    await repository.clear();
     citiesList = [];
     for (let i = 0; i < 5; i++) {
       const city: CityEntity = await repository.save({
-        name: faker.address.city(),
-        country: faker.address.country(),
-        numHabitants: faker.datatype.number(),
+        name: faker.location.city(),
+        country: faker.location.country(),
+        numHabitants: faker.number.int(),
       });
       citiesList.push(city);
     }
@@ -66,9 +66,9 @@ describe('CityService', () => {
   it('create should return a new city', async () => {
     const city: CityEntity = {
       id: '',
-      name: faker.address.city(),
-      country: faker.address.country(),
-      numHabitants: faker.datatype.number(),
+      name: faker.location.city(),
+      country: faker.location.country(),
+      numHabitants: faker.number.int(),
       supermarkets: [],
     };
 
@@ -86,9 +86,9 @@ describe('CityService', () => {
 
   it('update should modify a city', async () => {
     const city: CityEntity = citiesList[0];
-    city.name = faker.address.city();
-    city.country = faker.address.country();
-    city.numHabitants = faker.datatype.number();
+    city.name = faker.location.city();
+    city.country = faker.location.country();
+    city.numHabitants = faker.number.int();
 
     const updatedCity: CityEntity = await service.update(city.id, city);
     expect(updatedCity).not.toBeNull();
@@ -105,9 +105,9 @@ describe('CityService', () => {
     let city: CityEntity = citiesList[0];
     city = {
       ...city,
-      name: faker.address.city(),
-      country: faker.address.country(),
-      numHabitants: faker.datatype.number(),
+      name: faker.location.city(),
+      country: faker.location.country(),
+      numHabitants: faker.number.int(),
     };
     await expect(() => service.update('0', city)).rejects.toHaveProperty(
       'message',
@@ -125,7 +125,6 @@ describe('CityService', () => {
   });
 
   it('delete should throw an exception for an invalid city', async () => {
-    const city: CityEntity = citiesList[0];
     await expect(() => service.delete('0')).rejects.toHaveProperty(
       'message',
       'The city with the given id was not found',

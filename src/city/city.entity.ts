@@ -1,12 +1,9 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToMany } from 'typeorm';
+import { Entity, Column, ManyToMany, JoinTable } from 'typeorm';
 import { SupermarketEntity } from '../supermarket/supermarket.entity';
 import { BaseEntity } from '../shared/entities/base.entity';
 
 @Entity()
 export class CityEntity extends BaseEntity {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
-
   @Column()
   name: string;
 
@@ -16,6 +13,7 @@ export class CityEntity extends BaseEntity {
   @Column()
   numHabitants: number;
 
-  @ManyToMany((type) => SupermarketEntity, (supermarket) => supermarket.cities)
+  @ManyToMany(() => SupermarketEntity, (supermarket) => supermarket.cities)
+  @JoinTable()
   supermarkets: SupermarketEntity[];
 }
