@@ -70,7 +70,8 @@ El propósito de esta aplicación es desarrollar un sistema para consultar la of
 1. Clona este repositorio en tu máquina local:
 
    ```bash
-   git clone https://github.com/tu-usuario/nombre-del-repositorio.git
+   git clone https://github.com/WillyBallesteros/SupermarketOffer.git
+   
 
 
 
