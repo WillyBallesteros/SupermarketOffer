@@ -1,4 +1,4 @@
-# Supermercados en Ciudades - API
+# SupermmarketOffer - API
 
 ## Descripción
 
