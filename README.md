@@ -26,7 +26,7 @@ El propósito de esta aplicación es desarrollar un sistema para consultar la of
 
 3. Ejecuta la aplicación:
    ```bash
-   npm run test
+   npm run start
 
 ### Diagrama de Clases
 ![image](https://github.com/user-attachments/assets/c8ba23bb-400b-4f6e-a925-9875fca90ab5)
