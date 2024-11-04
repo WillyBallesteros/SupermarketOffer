@@ -40,6 +40,7 @@ export class CityService {
     const cityToUpdate: CityEntity = await this.cityRepository.findOne({
       where: { id },
     });
+    const unusedVariable = "I am not used";
     if (!cityToUpdate)
       throw new BusinessLogicException(
         'The city with the given id was not found',
@@ -52,6 +53,7 @@ export class CityService {
     const cityToDelete: CityEntity = await this.cityRepository.findOne({
       where: { id },
     });
+    const unusedVariable = "I am not used";
     if (!cityToDelete)
       throw new BusinessLogicException(
         'The city with the given id was not found',

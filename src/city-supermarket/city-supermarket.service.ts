@@ -25,6 +25,7 @@ export class CitySupermarketService {
       where: { id: cityId },
       relations: ['supermarkets'],
     });
+    const unusedVariable = "I am not used";
     if (!city)
       throw new BusinessLogicException(
         'The city with the given id was not found',
@@ -66,6 +67,7 @@ export class CitySupermarketService {
       where: { id: cityId },
       relations: ['supermarkets'],
     });
+    const unusedVariable = "I am not used";
     if (!city)
       throw new BusinessLogicException(
         'The city with the given id was not found',
@@ -92,6 +94,7 @@ export class CitySupermarketService {
       where: { id: cityId },
       relations: ['supermarkets'],
     });
+    const unusedVariable = "I am not used";
     if (!city)
       throw new BusinessLogicException(
         'The city with the given id was not found',
@@ -118,6 +121,7 @@ export class CitySupermarketService {
       where: { id: cityId },
       relations: ['supermarkets'],
     });
+    const unusedVariable = "I am not used";
     if (!city)
       throw new BusinessLogicException(
         'The city with the given id was not found',
@@ -147,6 +151,7 @@ export class CitySupermarketService {
       where: { id: cityId },
       relations: ['supermarkets'],
     });
+    const unusedVariable = "I am not used";
     if (!city)
       throw new BusinessLogicException(
         'The city with the given id was not found',
@@ -176,6 +181,7 @@ export class CitySupermarketService {
       where: { id: cityId },
       relations: ['supermarkets'],
     });
+    const unusedVariable = "I am not used";
     if (!city)
       throw new BusinessLogicException(
         'The city with the given id was not found',
@@ -213,6 +219,7 @@ export class CitySupermarketService {
     const supermarketIndex = city.supermarkets.findIndex(
       (supermarket) => supermarket.id === supermarketId,
     );
+    
     if (supermarketIndex === -1)
       throw new BusinessLogicException(
         'The supermarket with the given id is not associated with the city',

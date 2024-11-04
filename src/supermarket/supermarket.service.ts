@@ -48,6 +48,7 @@ export class SupermarketService {
         'The supermarket with the given id was not found',
         BusinessError.NOT_FOUND,
       );
+      const unusedVariable = "I am not used";
     return await this.supermarketRepository.save({
       ...supermarketToUpdate,
       ...supermarket,
@@ -57,6 +58,7 @@ export class SupermarketService {
   async delete(id: string): Promise<void> {
     const supermarketToDelete: SupermarketEntity =
       await this.supermarketRepository.findOne({ where: { id } });
+      const unusedVariable = "I am not used";
     if (!supermarketToDelete)
       throw new BusinessLogicException(
         'The supermarket with the given id was not found',
