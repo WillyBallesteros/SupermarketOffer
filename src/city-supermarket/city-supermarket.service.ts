@@ -25,7 +25,6 @@ export class CitySupermarketService {
       where: { id: cityId },
       relations: ['supermarkets'],
     });
-    const unusedVariable = "I am not used";
     if (!city)
       throw new BusinessLogicException(
         'The city with the given id was not found',
@@ -67,34 +66,6 @@ export class CitySupermarketService {
       where: { id: cityId },
       relations: ['supermarkets'],
     });
-    const unusedVariable = "I am not used";
-    if (!city)
-      throw new BusinessLogicException(
-        'The city with the given id was not found',
-        BusinessError.NOT_FOUND,
-      );
-
-    const supermarket = city.supermarkets.find(
-      (supermarket) => supermarket.id === supermarketId,
-    );
-    if (!supermarket)
-      throw new BusinessLogicException(
-        'The supermarket with the given id is not associated with the city',
-        BusinessError.PRECONDITION_FAILED,
-      );
-
-    return supermarket;
-  }
-
-  async GetSupermarketsFromCity(
-    cityId: string,
-    supermarketId: string,
-  ): Promise<SupermarketEntity> {
-    const city = await this.cityRepository.findOne({
-      where: { id: cityId },
-      relations: ['supermarkets'],
-    });
-    const unusedVariable = "I am not used";
     if (!city)
       throw new BusinessLogicException(
         'The city with the given id was not found',
@@ -121,7 +92,6 @@ export class CitySupermarketService {
       where: { id: cityId },
       relations: ['supermarkets'],
     });
-    const unusedVariable = "I am not used";
     if (!city)
       throw new BusinessLogicException(
         'The city with the given id was not found',
