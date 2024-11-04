@@ -25,10 +25,6 @@ export class SupermarketService {
         relations: ['cities'],
       });
       const unusedVariable = "I am not used";
-      function unusedFunction() {
-          console.log("This function is not called anywhere.");
-      }
-
     if (!supermarket)
       throw new BusinessLogicException(
         'The supermarket with the given id was not found',
