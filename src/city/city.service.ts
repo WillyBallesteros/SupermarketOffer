@@ -12,8 +12,7 @@ export class CityService {
   constructor(
     @InjectRepository(CityEntity)
     private readonly cityRepository: Repository<CityEntity>,
-    private readonly unusedRepository: Repository<any>, // Repositorio innecesario
-  ) { }
+  ) {}
 
   async findAll(): Promise<CityEntity[]> {
     return await this.cityRepository.find({ relations: ['supermarkets'] });
@@ -33,7 +32,7 @@ export class CityService {
     return city;
   }
 
-  async create(city: CityEntity): Promise<any> { // Retorno cambiado a any
+  async create(city: CityEntity): Promise<CityEntity> {
     return await this.cityRepository.save(city);
   }
 
@@ -59,13 +58,5 @@ export class CityService {
         BusinessError.NOT_FOUND,
       );
     await this.cityRepository.remove(cityToDelete);
-  }
-
-  private unusedMethod(): void { // Método innecesario
-    console.log('Este método no se utiliza');
-  }
-
-  async unusedAsyncMethod(id: string): Promise<void> { // Método async innecesario
-    console.log(`ID recibido: ${id}`);
   }
 }
