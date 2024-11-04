@@ -12,7 +12,7 @@ export class SupermarketService {
   constructor(
     @InjectRepository(SupermarketEntity)
     private readonly supermarketRepository: Repository<SupermarketEntity>,
-  ) {}
+  ) { }
 
   async findAll(): Promise<SupermarketEntity[]> {
     return await this.supermarketRepository.find({ relations: ['cities'] });
@@ -24,7 +24,6 @@ export class SupermarketService {
         where: { id },
         relations: ['cities'],
       });
-      const unusedVariable = "I am not used";
     if (!supermarket)
       throw new BusinessLogicException(
         'The supermarket with the given id was not found',
@@ -48,7 +47,6 @@ export class SupermarketService {
         'The supermarket with the given id was not found',
         BusinessError.NOT_FOUND,
       );
-      const unusedVariable = "I am not used";
     return await this.supermarketRepository.save({
       ...supermarketToUpdate,
       ...supermarket,
@@ -58,7 +56,6 @@ export class SupermarketService {
   async delete(id: string): Promise<void> {
     const supermarketToDelete: SupermarketEntity =
       await this.supermarketRepository.findOne({ where: { id } });
-      const unusedVariable = "I am not used";
     if (!supermarketToDelete)
       throw new BusinessLogicException(
         'The supermarket with the given id was not found',
