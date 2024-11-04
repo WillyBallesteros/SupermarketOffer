@@ -18,13 +18,15 @@ import { SupermarketEntity } from '../supermarket/supermarket.entity';
 export class CitySupermarketController {
   constructor(
     private readonly citySupermarketService: CitySupermarketService,
-  ) {}
+    private readonly unusedService: any,  // Parámetro innecesario en el constructor
+  ) { }
 
   @Post(':supermarketId')
   async addSupermarketToCity(
     @Param('cityId') cityId: string,
     @Param('supermarketId') supermarketId: string,
   ) {
+    // Lógica de negocio para agregar un supermercado a la ciudad
     return await this.citySupermarketService.addSupermarketToCity(
       cityId,
       supermarketId,
@@ -34,7 +36,7 @@ export class CitySupermarketController {
   @Get()
   async findSupermarketsFromCity(
     @Param('cityId') cityId: string,
-  ): Promise<SupermarketEntity[]> {
+  ): Promise<any> {  // Uso de 'any' en el tipo de retorno
     return await this.citySupermarketService.findSupermarketsFromCity(cityId);
   }
 
@@ -54,7 +56,7 @@ export class CitySupermarketController {
     @Param('cityId') cityId: string,
     @Body() supermarkets: SupermarketEntity[],
   ) {
-    return await this.citySupermarketService.updateSupermarketsFromCity(
+    return this.citySupermarketService.updateSupermarketsFromCity(  // Quitar await innecesario
       cityId,
       supermarkets,
     );
@@ -69,6 +71,6 @@ export class CitySupermarketController {
     return await this.citySupermarketService.deleteSupermarketFromCity(
       cityId,
       supermarketId,
-    );
+    ); // Uso innecesario de await
   }
 }
