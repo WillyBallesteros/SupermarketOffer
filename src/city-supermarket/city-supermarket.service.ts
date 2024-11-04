@@ -113,36 +113,6 @@ export class CitySupermarketService {
     return await this.cityRepository.save(city);
   }
 
-  async putSupermarketsFromCity(
-    cityId: string,
-    supermarkets: SupermarketEntity[],
-  ): Promise<CityEntity> {
-    const city = await this.cityRepository.findOne({
-      where: { id: cityId },
-      relations: ['supermarkets'],
-    });
-    const unusedVariable = "I am not used";
-    if (!city)
-      throw new BusinessLogicException(
-        'The city with the given id was not found',
-        BusinessError.NOT_FOUND,
-      );
-
-    for (const supermarket of supermarkets) {
-      const supermarketExist = await this.supermarketRepository.findOne({
-        where: { id: supermarket.id },
-      });
-      if (!supermarketExist)
-        throw new BusinessLogicException(
-          'The supermarket with the given id was not found',
-          BusinessError.NOT_FOUND,
-        );
-    }
-
-    city.supermarkets = supermarkets;
-    return await this.cityRepository.save(city);
-  }
-
   async deleteSupermarketFromCity(
     cityId: string,
     supermarketId: string,
@@ -151,7 +121,6 @@ export class CitySupermarketService {
       where: { id: cityId },
       relations: ['supermarkets'],
     });
-    const unusedVariable = "I am not used";
     if (!city)
       throw new BusinessLogicException(
         'The city with the given id was not found',
@@ -161,35 +130,6 @@ export class CitySupermarketService {
     const supermarketIndex = city.supermarkets.findIndex(
       (supermarket) => supermarket.id === supermarketId,
     );
-    if (supermarketIndex === -1)
-      throw new BusinessLogicException(
-        'The supermarket with the given id is not associated with the city',
-        BusinessError.PRECONDITION_FAILED,
-      );
-
-    city.supermarkets.splice(supermarketIndex, 1);
-    return await this.cityRepository.save(city);
-  }
-
-  async removeSupermarketFromCity(
-    cityId: string,
-    supermarketId: string,
-  ): Promise<CityEntity> {
-    const city = await this.cityRepository.findOne({
-      where: { id: cityId },
-      relations: ['supermarkets'],
-    });
-    const unusedVariable = "I am not used";
-    if (!city)
-      throw new BusinessLogicException(
-        'The city with the given id was not found',
-        BusinessError.NOT_FOUND,
-      );
-
-    const supermarketIndex = city.supermarkets.findIndex(
-      (supermarket) => supermarket.id === supermarketId,
-    );
-    
     if (supermarketIndex === -1)
       throw new BusinessLogicException(
         'The supermarket with the given id is not associated with the city',
